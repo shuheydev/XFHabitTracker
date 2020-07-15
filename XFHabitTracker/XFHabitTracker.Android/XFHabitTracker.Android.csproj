@@ -47,11 +47,14 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <AndroidKeyStore>true</AndroidKeyStore>
+    <AndroidKeyStore>false</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Users\shuhey\AppData\Local\Xamarin\Mono for Android\Keystore\harusoft\harusoft.keystore</AndroidSigningKeyStore>
-    <AndroidSigningStorePass>P3nmM7Ci</AndroidSigningStorePass>
-    <AndroidSigningKeyAlias>harusoft</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>P3nmM7Ci</AndroidSigningKeyPass>
+    <AndroidSigningStorePass>
+    </AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>
+    </AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>
+    </AndroidSigningKeyPass>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
