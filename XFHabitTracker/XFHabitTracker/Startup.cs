@@ -50,7 +50,7 @@ namespace XFHabitTracker
             //Add Services here
             //ex:View, ViewModel, DataService, Notification Service etc.
             //services.AddTransient<MainPage>();
-            services.AddTransient<Page, AppShell>();
+            services.AddTransient<Shell, AppShell>();
             services.AddSingleton<App>();
         }
     }
