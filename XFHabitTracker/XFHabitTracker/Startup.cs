@@ -15,7 +15,7 @@ namespace XFHabitTracker
 {
     public class Startup
     {
-        public static IServiceProvider ServiceProvider { get; set; }
+        public static IServiceProvider? ServiceProvider { get; set; }
 
         public static App Init(Action<HostBuilderContext, IServiceCollection> nativeConfigureServices)
         {
