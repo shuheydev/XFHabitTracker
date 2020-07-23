@@ -8,13 +8,12 @@ namespace XFHabitTracker.Models
     {
         public string Name { get; set; } = string.Empty;
         public string Id { get; set; } = string.Empty;
-
-        public List<Record> Records { get; set; } = new List<Record>();
+        public DateTimeOffset CreatedAt { get; set; }
     }
 
     public class Record
     {
-        public string Id { get; set; }
+        public string Id { get; set; } = string.Empty;
         public DateTimeOffset Start { get; set; }
         public DateTimeOffset End { get; set; }
     }

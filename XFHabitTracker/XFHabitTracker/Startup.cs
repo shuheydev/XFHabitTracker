@@ -9,6 +9,9 @@ using System.Reflection;
 using System.Text;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using XFHabitTracker.Models;
+using XFHabitTracker.Services;
+using XFHabitTracker.ViewModels;
 using XFHabitTracker.Views;
 
 namespace XFHabitTracker
@@ -50,6 +53,15 @@ namespace XFHabitTracker
             //Add Services here
             //ex:View, ViewModel, DataService, Notification Service etc.
             //services.AddTransient<MainPage>();
+#if debug_mock
+            services.AddSingleton<IDataStore<Habit>, DataStoreMock>();
+#else
+            services.AddSingleton<IDataStore<Habit>, HabitStore>();
+#endif
+            services.AddTransient<AddHabitPage>();
+            services.AddTransient<AddHabitViewModel>();
+            services.AddTransient<HabitListViewModel>();
+            services.AddTransient<HabitListPage>();
             services.AddTransient<Shell, AppShell>();
             services.AddSingleton<App>();
         }

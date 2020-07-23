@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFHabitTracker.Views;
 
 namespace XFHabitTracker
 {
@@ -15,6 +16,9 @@ namespace XFHabitTracker
         public AppShell()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute(nameof(AddHabitPage), typeof(AddHabitPage));
+            Routing.RegisterRoute(nameof(HabitListPage), typeof(HabitListPage));
         }
     }
 }

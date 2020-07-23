@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFHabitTracker.Views.HabitListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Clear All" Command="{Binding ClearAllHabitsCommand}"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <listview:SfListView
+            x:Name="listView"
+            AutoFitMode="Height"
+            DragStartMode="OnHold"
+            FooterSize="200"
+            ItemSpacing="0,5"
+            ItemsSource="{Binding Habits}">
+            <listview:SfListView.DragItemTemplate>
+                <DataTemplate>
+                    <StackLayout BackgroundColor="LightPink">
+                        <Label Text="{Binding Name}" />
+                        <Label Text="{Binding Id}" />
+                        <Label Text="日数" />
+                    </StackLayout>
+                </DataTemplate>
+            </listview:SfListView.DragItemTemplate>
+            <listview:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout BackgroundColor="LightBlue">
+                        <Label Text="{Binding Name}" />
+                        <Label Text="{Binding Id}" />
+                        <Label Text="日数" />
+                        <Label Text="開始日" />
+                    </StackLayout>
+                </DataTemplate>
+            </listview:SfListView.ItemTemplate>
+            <listview:SfListView.FooterTemplate>
+                <DataTemplate>
+                    <Grid HeightRequest="100" />
+                </DataTemplate>
+            </listview:SfListView.FooterTemplate>
+        </listview:SfListView>
+        <button:SfButton
+            Clicked="AddHabitButtonClicked"
+            Margin="10"
+            HorizontalOptions="End"
+            Text="Add"
+            VerticalOptions="End" />
+        <Label HorizontalOptions="Start" VerticalOptions="End" BackgroundColor="Yellow">
+            <Label.Text>
+                <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding Path="HabitId"/>
+                    <Binding Path="ActionType"/>
+                </MultiBinding>
+            </Label.Text>
+        </Label>
+    </Grid>
+</ContentPage>
