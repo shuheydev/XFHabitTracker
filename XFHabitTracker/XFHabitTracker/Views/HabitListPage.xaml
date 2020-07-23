@@ -9,7 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Clear All" Command="{Binding ClearAllHabitsCommand}"/>
+        <ToolbarItem Command="{Binding ClearAllHabitsCommand}" Text="Clear All" />
     </ContentPage.ToolbarItems>
     <Grid>
         <listview:SfListView
@@ -24,7 +24,6 @@
                     <StackLayout BackgroundColor="LightPink">
                         <Label Text="{Binding Name}" />
                         <Label Text="{Binding Id}" />
-                        <Label Text="日数" />
                     </StackLayout>
                 </DataTemplate>
             </listview:SfListView.DragItemTemplate>
@@ -33,8 +32,6 @@
                     <StackLayout BackgroundColor="LightBlue">
                         <Label Text="{Binding Name}" />
                         <Label Text="{Binding Id}" />
-                        <Label Text="日数" />
-                        <Label Text="開始日" />
                     </StackLayout>
                 </DataTemplate>
             </listview:SfListView.ItemTemplate>
@@ -45,16 +42,19 @@
             </listview:SfListView.FooterTemplate>
         </listview:SfListView>
         <button:SfButton
-            Clicked="AddHabitButtonClicked"
             Margin="10"
+            Clicked="AddHabitButtonClicked"
             HorizontalOptions="End"
             Text="Add"
             VerticalOptions="End" />
-        <Label HorizontalOptions="Start" VerticalOptions="End" BackgroundColor="Yellow">
+        <Label
+            BackgroundColor="Yellow"
+            HorizontalOptions="Start"
+            VerticalOptions="End">
             <Label.Text>
                 <MultiBinding StringFormat="{}{0} {1}">
-                    <Binding Path="HabitId"/>
-                    <Binding Path="ActionType"/>
+                    <Binding Path="HabitId" />
+                    <Binding Path="ActionType" />
                 </MultiBinding>
             </Label.Text>
         </Label>
