@@ -8,6 +8,8 @@ namespace XFHabitTracker
     {
         public App()
         {
+            Device.SetFlags(new string[] {"Markup_Experimental" });
+
             InitializeComponent();
 
             MainPage = Startup.ServiceProvider.GetService<Shell>();
